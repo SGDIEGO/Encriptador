@@ -11,8 +11,6 @@ const novacio = `        <div id="contenedor-2__text">
 </div>`;
 
 const contenedor2 = document.querySelector("#contenedor-2");
-let X = 0,
-  Y = 0;
 
 // Diccionario para cambiar valores
 const encriptarDicc = {
@@ -128,8 +126,6 @@ function desEncriptar() {
 
 // Funcion de inicio
 function inicio(e) {
-  X = window.innerWidth;
-  Y = window.innerHeight;
   const text1 = document.querySelector("#text-1");
   text1.value = "";
 }
