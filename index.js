@@ -1,3 +1,19 @@
+const novacio = `        <div id="contenedor-2__text">
+<textarea
+  id="text-2"
+  class="contenedor__text-area"
+  onchange="actualizar()"
+  readonly
+></textarea>
+<div id="contenedor-2__btn">
+  <button class="boton" onclick="copiar()">Copiar</button>
+</div>
+</div>`;
+
+const contenedor2 = document.querySelector("#contenedor-2");
+let X = 0,
+  Y = 0;
+
 // Diccionario para cambiar valores
 const encriptarDicc = {
   a: "ai",
@@ -25,6 +41,14 @@ function encriptarFunc(texto) {
 function encriptar() {
   // Texto ingresado
   const texto = document.querySelector("#text-1").value;
+
+  // Texto vacio
+  if (texto == "") {
+    alert("Ingrese texto a encriptar o desencriptar");
+    return;
+  }
+  contenedor2.innerHTML = novacio;
+
   const encriptacion = document.querySelector("#text-2");
 
   // Logica
@@ -88,9 +112,28 @@ function copiar() {
 // Funcion para el evento click del boton Desencriptar
 function desEncriptar() {
   const texto1 = document.querySelector("#text-1").value;
+  // Texto vacio
+  if (texto1 == "") {
+    alert("Ingrese texto a encriptar o desencriptar");
+    return;
+  }
+  contenedor2.innerHTML = novacio;
+
   const texto2 = document.querySelector("#text-2");
 
   const textoDes = desEncriptarFunc(texto1);
 
   texto2.value = textoDes;
 }
+
+// Funcion de inicio
+function inicio(e) {
+  X = window.innerWidth;
+  Y = window.innerHeight;
+  const text1 = document.querySelector("#text-1");
+  text1.value = "";
+}
+
+// Cuando inicie
+window.onload = inicio;
+// window.onresize = tamañopantalla;

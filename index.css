@@ -5,7 +5,7 @@ body {
 #contenedor {
   position: absolute;
   background-color: aliceblue;
-  width: 100%;
+  min-width: 100%;
   height: 100%;
 
   display: grid;
@@ -31,10 +31,21 @@ body {
 
   background-color: white;
   border-radius: 0.8rem;
+
+  position: relative;
 }
 
 #contenedor-2__text {
-  height: 90%;
+  margin: 0;
+  height: 100%;
+}
+
+#contenedor-2__vacio {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  position: relative;
 }
 
 #contenedor-2__btn {
@@ -69,4 +80,41 @@ body {
 
 .contenedor__text-area:focus {
   outline: none;
+}
+
+#logo {
+  position: absolute;
+  width: Fixed (120px);
+  height: Fixed (48px);
+  top: 40px;
+  left: 40px;
+  gap: 40px;
+  z-index: 1;
+}
+
+#notexto {
+  display: block;
+  margin: auto;
+}
+
+#contenedor-2__mensaje {
+  text-align: center;
+}
+
+@media (max-width: 800px) {
+  #contenedor {
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 1fr;
+  }
+}
+
+@media (max-width: 450px) {
+  #contenedor-1__btn {
+    display: grid;
+    gap: 0.8rem;
+  }
+
+  #contenedor-2__vacio svg {
+    display: none;
+  }
 }
