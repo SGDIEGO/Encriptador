@@ -18,15 +18,7 @@ body {
 
 #contenedor-1__text {
   height: 90%;
-}
-
-#contenedor-1__text-area {
-  width: 95%;
-  height: 97%;
-  margin: 10px 0 0 10px;
-
-  resize: none;
-  border: none;
+  padding: 0 20%;
 }
 
 #contenedor-1__btn {
@@ -41,16 +33,6 @@ body {
   border-radius: 0.8rem;
 }
 
-#contenedor-2::after {
-  content: "";
-  position: absolute;
-  
-  
-  background-color: black;
-  width: 100%;
-  height: 1px;
-}
-
 #contenedor-2__text {
   height: 90%;
 }
@@ -60,10 +42,31 @@ body {
 }
 
 .boton {
+  cursor: pointer;
   background-color: transparent;
   border: 1px solid rgb(34, 34, 158);
   border-radius: 0.8rem;
 
   padding: 0.5rem 0;
   width: 200px;
+}
+
+.boton-principal {
+  background-color: rgb(34, 34, 158);
+  color: white;
+}
+
+.contenedor__text-area {
+  font-size: 24px;
+  background-color: transparent;
+  width: 90%;
+  height: 90%;
+  margin: 10px 0 0 10px;
+
+  resize: none;
+  border: none;
+}
+
+.contenedor__text-area:focus {
+  outline: none;
 }
