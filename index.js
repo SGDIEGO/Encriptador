@@ -38,13 +38,25 @@ function encriptarFunc(texto) {
 // Funcion para el evento click del boton Encriptar
 function encriptar() {
   // Texto ingresado
-  const texto = document.querySelector("#text-1").value;
+  const texto1 = document.querySelector("#text-1");
+  const texto = texto1.value;
 
   // Texto vacio
   if (texto == "") {
     alert("Ingrese texto a encriptar o desencriptar");
     return;
   }
+
+  // Iterar en cadena ingresada para verificar minusculas
+  for (const caracter of texto) {
+    console.log(caracter);
+    if (caracter < "a" || caracter > "z") {
+      alert("Ingrese solo texto en minuscula");
+      texto1.value = "";
+      return;
+    }
+  }
+
   contenedor2.innerHTML = novacio;
 
   const encriptacion = document.querySelector("#text-2");
@@ -109,11 +121,21 @@ function copiar() {
 
 // Funcion para el evento click del boton Desencriptar
 function desEncriptar() {
-  const texto1 = document.querySelector("#text-1").value;
+  const texto = document.querySelector("#text-1");
+  const texto1 = texto.value;
   // Texto vacio
   if (texto1 == "") {
     alert("Ingrese texto a encriptar o desencriptar");
     return;
+  }
+  // Iterar en cadena ingresada para verificar minusculas
+  for (const caracter of texto1) {
+    console.log(caracter);
+    if (caracter < "a" || caracter > "z") {
+      alert("Ingrese solo texto en minuscula");
+      texto.value = "";
+      return;
+    }
   }
   contenedor2.innerHTML = novacio;
 
